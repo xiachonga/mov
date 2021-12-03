@@ -1,0 +1,50 @@
+0	s411	SVE-128	SVE-256	SVE-512	SVE-1024
+	l1 cache miss ratio	0.629247	0.760143	0.814869	0.814668
+	l1 cache miss latency	44	42	62	98
+	l2 cache miss ratio	0.153075	0.153065	0.15306	0.153051
+	l2 cache miss latency	201	201	201	208
+1	vif	SVE-128	SVE-256	SVE-512	SVE-1024
+	l1 cache miss ratio	0.959459	0.985552	0.979053	0.972956
+	l1 cache miss latency	23	40	69	127
+	l2 cache miss ratio	0.082989	0.082972	0.082954	0.082922
+	l2 cache miss latency	201	201	201	209
+2	vpv	SVE-128	SVE-256	SVE-512	SVE-1024
+	l1 cache miss ratio	0.549882	0.690823	0.69435	0.697444
+	l1 cache miss latency	34	35	75	129
+	l2 cache miss ratio	0.119319	0.119321	0.119272	0.119324
+	l2 cache miss latency	201	201	201	209
+3	vtv	SVE-128	SVE-256	SVE-512	SVE-1024
+	l1 cache miss ratio	0.548435	0.686699	0.688594	0.6902
+	l1 cache miss latency	31	31	72	127
+	l2 cache miss ratio	0.100448	0.100454	0.100409	0.100409
+	l2 cache miss latency	201	201	201	210
+4	vpvtv	SVE-128	SVE-256	SVE-512	SVE-1024
+	l1 cache miss ratio	0.612259	0.770992	0.772967	0.774577
+	l1 cache miss latency	40	40	74	122
+	l2 cache miss ratio	0.142283	0.142287	0.142247	0.142279
+	l2 cache miss latency	201	201	201	208
+5	vpvpv	SVE-128	SVE-256	SVE-512	SVE-1024
+	l1 cache miss ratio	0.601877	0.766335	0.767282	0.767989
+	l1 cache miss latency	34	34	68	118
+	l2 cache miss ratio	0.115022	0.115024	0.115025	0.115027
+	l2 cache miss latency	201	201	201	209
+6	vtvtv	SVE-128	SVE-256	SVE-512	SVE-1024
+	l1 cache miss ratio	0.600395	0.765307	0.765057	0.764574
+	l1 cache miss latency	34	34	68	117
+	l2 cache miss ratio	0.115798	0.115804	0.1158	0.115797
+	l2 cache miss latency	201	201	201	210
+7	vsumr	SVE-128	SVE-256	SVE-512	SVE-1024
+	l1 cache miss ratio	0.911682	0.964652	0.951035	0.939081
+	l1 cache miss latency	46	50	76	113
+	l2 cache miss ratio	0.195796	0.195789	0.195498	0.195565
+	l2 cache miss latency	201	201	201	209
+8	vdotr	SVE-128	SVE-256	SVE-512	SVE-1024
+	l1 cache miss ratio	0.976038	0.969248	0.957595	0.947264
+	l1 cache miss latency	40	46	71	108
+	l2 cache miss ratio	0.174679	0.174652	0.174615	0.174544
+	l2 cache miss latency	201	201	201	209
+9	vbor	SVE-128	SVE-256	SVE-512	SVE-1024
+	l1 cache miss ratio	0.538779	0.577687	0.633216	0.671034
+	l1 cache miss latency	165	164	161	168
+	l2 cache miss ratio	0.791885	0.791893	0.791841	0.791811
+	l2 cache miss latency	201	201	201	207
