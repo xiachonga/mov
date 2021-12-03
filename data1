@@ -1,0 +1,46 @@
+vpv:884										
+	sve-128	sve-256	sve-512	sve-1024	内层循环的迭代次数	是否线性				
+l1 cache miss ratio	0.506841	0.533063	0.574035	0.608904	256	线性				
+l1 cache miss latency	172	174	174	188						
+l2 cache miss ratio	0.819884	0.819899	0.819827	0.819744						
+l2 cache miss latency	201	201	201	209						
+l1 cache miss ratio	0.355122	0.384197	0.43274	0.469367	512	线性				
+l1 cache miss latency	172	174	174	188						
+l2 cache miss ratio	0.819673	0.819684	0.819587	0.819533						
+l2 cache miss latency	201	201	201	209						
+l1 cache miss ratio	0.222182	0.246577	0.290043	0.325896	1024	线性				
+l1 cache miss latency	172	174	174	188						
+l2 cache miss ratio	0.819215	0.819229	0.819158	0.819058						
+l2 cache miss latency	201	201	201	209						
+l1 cache miss ratio	0.127168	0.143766	0.17488	0.202388	2048	线性				
+l1 cache miss latency	172	174	174	188						
+l2 cache miss ratio	0.818283	0.818298	0.818226	0.818201						
+l2 cache miss latency	201	201	201	209						
+l1 cache miss ratio	0.068659	0.078499	0.097569	0.115221	4096	线性	1358	679	340	170
+l1 cache miss latency	171	174	173	188						
+l2 cache miss ratio	0.816461	0.816475	0.816404	0.816407						
+l2 cache miss latency	201	201	201	209						
+l1 cache miss ratio	0.039663	0.045126	0.055615	0.066871	8192	线性	2715	1358	680	340
+l1 cache miss latency	155	159	162	175						
+l2 cache miss ratio	0.714008	0.73371	0.733549	0.733679						
+l2 cache miss latency	201	201	201	209						
+l1 cache miss ratio	0.406388	0.516093	0.520813	0.475817	10240	非线性但有加速比	3396	1764	1347	1155
+l1 cache miss latency	19	25	55	104						
+l2 cache miss ratio	0.05151	0.05151	0.051283	0.056734						
+l2 cache miss latency	201	201	201	209						
+l1 cache miss ratio	0.511919	0.673029	0.674457	0.67543	12288	非线性	4074	2041	2042	2041
+l1 cache miss latency	15	19	59	118						
+l2 cache miss ratio	0.03313	0.03313	0.033089	0.033089						
+l2 cache miss latency	201	201	201	209						
+l1 cache miss ratio	0.509295	0.671557	0.672669	0.673245	16384	非线性	5433	2720	2721	2718
+l1 cache miss latency	13	17	58	117						
+l2 cache miss ratio	0.025105	0.025105	0.025079	0.025101						
+l2 cache miss latency	201	201	201	209						
+l1 cache miss ratio	0.512491	0.669206	0.669794	0.670136	32000	非线性				
+l1 cache miss latency	10	14	56	115						
+l2 cache miss ratio	0.013058	0.013058	0.013052	0.013058						
+l2 cache miss latency	201	201	201	209						
+l1 cache miss ratio	0.599167	0.625236	0.650415	0.655271	320000	非线性	44583	23882	12201	6379
+l1 cache miss latency	103	106	108	116						
+l2 cache miss ratio	0.476051	0.476148	0.476137	0.476248						
+l2 cache miss latency	201	201	201	202						
