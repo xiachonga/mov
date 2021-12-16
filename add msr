@@ -1,0 +1,20 @@
+/// add msr & mrs Instructions.
+void VPlan::addSpecialInstructions(VPTransformState *State) {
+  auto VF = State->VF;
+  BasicBlock *VectorPreHeaderBB = State->CFG.VectorPreHeader;
+  State->Builder.SetInsertPoint(&VectorPreHeaderBB->back());
+
+  LLVMContext &Context = VectorPreHeaderBB->getContext();
+  std::string SysRegStr = "3:0:15:15:0";
+  Metadata *Ops[] = { llvm::MDString::get(Context, SysRegStr) };
+  MDNode *RegName = llvm::MDNode::get(Context, Ops);
+  Value *Metadata = llvm::MetadataAsValue::get(Context, RegName);
+
+  Type *RegisterType = Type::getInt64Ty(Context);
+  Type *Types[] = { RegisterType };
+  Function *F = Intrinsic::getDeclaration(VectorPreHeaderBB->getModule(), Intrinsic::write_register, Types);
+  FunctionCallee callee(F);
+  //ArrayRef<Value *> Args = { Metadata , VF.getKnownMinValue() };
+  ArrayRef<Value *> Args = { Metadata , ConstantInt::get(RegisterType, VF.getKnownMinValue()) };
+  State->Builder.CreateCall(callee, Args);
+}
