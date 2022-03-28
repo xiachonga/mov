@@ -1,0 +1,83 @@
+#include<iostream>
+#include<chrono>
+#include<cmath>
+#include"common.h"
+#include"init.h"
+
+using namespace std;
+
+void fitLine2D_wods( Point2f& points, int count, float *weights, float *line )
+{
+    float x = 0, y = 0, x2 = 0, y2 = 0, xy = 0, w = 0;
+    float dx2, dy2, dxy;
+    int i;
+    float t;
+
+    if( weights == 0 )
+    {
+        #pragma clang loop vectorize(enable)
+        for( i = 0; i < count; i += 1 )
+        {
+            float px = points.x[i];
+            float py = points.y[i];
+            x += px;
+            y += py;
+            x2 += px * px;
+            y2 += py * py;
+            xy += px * py;
+        }
+        w = (float) count;
+    }
+    else
+    {
+        #pragma clang loop vectorize(enable)
+        for( i = 0; i < count; i += 1 )
+        {
+            float px = points.x[i];
+            float py = points.y[i];
+            float ws = weights[i];
+            x += ws * px;
+            y += ws * py;
+            x2 += ws * px * px;
+            y2 += ws * py * py;
+            xy += ws * px * py;
+            w += ws;
+        }
+    }
+
+    x /= w;
+    y /= w;
+    x2 /= w;
+    y2 /= w;
+    xy /= w;
+
+    dx2 = x2 - x * x;
+    dy2 = y2 - y * y;
+    dxy = xy - x * y;
+
+    t = (float) atan2( 2 * dxy, dx2 - dy2 ) / 2;
+    line[0] = (float) cos( t );
+    line[1] = (float) sin( t );
+
+    line[2] = (float) x;
+    line[3] = (float) y;
+}
+
+extern void dummy(float *dst, float result);
+
+int main() {
+    Point2f points;    
+    init(src1, hwc, 1, 0.03);
+    init(src2, hwc, 2, 0.05);
+    init(weights1, weights2, hw);
+    init(points, count);
+    init(weights, count);
+    float line[4];
+ 
+    auto start1 = std::chrono::system_clock::now();
+    fitLine2D_wods(points, count, weights, line );
+    auto end1 = std::chrono::system_clock::now();
+    cout << "fitLine2D:" <<std::chrono::duration_cast<std::chrono::nanoseconds>(end1 - start1).count() <<endl;
+    dummy(line, result);
+    return 0;
+}
